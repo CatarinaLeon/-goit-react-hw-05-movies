@@ -1,0 +1,32 @@
+.movieCard {
+  margin-top: 5px;
+}
+
+.image {
+  width: 320px;
+}
+
+.movieInfo {
+  display: flex;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  padding-bottom: 15px;
+}
+
+.movieDetails {
+  padding-top: 15px;
+  margin-left: 10px;
+}
+
+.genresList {
+  padding-inline-start: 10px;
+  list-style: none;
+  display: flex;
+}
+
+.genresList__item:not(:first-child) {
+  margin-left: 15px;
+}
+
+.additionalInformation {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}

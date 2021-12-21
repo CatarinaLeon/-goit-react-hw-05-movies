@@ -1,0 +1,9 @@
+.Header {
+  padding: 30px 0 0 10px;
+  background-color: #daddec;
+  min-height: 60px;
+  display: flex;
+  gap: 20px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
