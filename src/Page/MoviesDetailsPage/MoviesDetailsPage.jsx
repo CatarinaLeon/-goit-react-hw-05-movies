@@ -66,8 +66,9 @@ const MoviesDetailsPage = () => {
           <h2 className={s.movieDetailsTitle}>
             {movie.title} ({movie.release_date})
           </h2>
-          <p className={s.movieDetailsSubject}>
-            User Score: {movie.popularity}
+          <p className={s.movieDetailsSubject} style={{ color: "grey" }}>
+            <span className={s.movieDetailsScore}>User Score:</span>
+            {movie.popularity}
           </p>
           <h3 className={s.movieDetailsText}>Overview</h3>
           <p className={s.movieDetailsSubject}>{movie.overview}</p>

@@ -19,17 +19,17 @@ const ActorCards = ({ actorsList }) => {
           // const imageURL = `${viewPoster(profile_path)}`;
           return (
             <li key={id} className={s.cardItem}>
-              {profile_path && (
-                <img
-                  src={
-                    profile_path
-                      ? `https://image.tmdb.org/t/p/w500${profile_path}`
-                      : defaultImg
-                  }
-                  alt={name}
-                  className={s.cardImg}
-                />
-              )}
+              {/* {profile_path &&( */}
+              <img
+                src={
+                  profile_path
+                    ? `https://image.tmdb.org/t/p/w500${profile_path}`
+                    : defaultImg
+                }
+                alt={name}
+                className={s.cardImg}
+              />
+              {/* // )} */}
               <p className={s.cardText}>{name}</p>
               <p className={s.cardSubject}>
                 <span className={s.cardCharaster}>Charaster:</span> {character}

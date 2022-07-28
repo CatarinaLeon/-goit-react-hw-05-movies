@@ -33,6 +33,11 @@
 .movieDetailsSubject{
   margin: 0 0 20px 0;
 }
+.movieDetailsScore{
+  margin-right: 7px;
+  font-weight: 500;
+  color:red;
+}
 .movieDetailsText{
   margin: 0 0 15px 0;
 }
