@@ -1,0 +1,44 @@
+.form{
+    position: relative;
+    padding: 0px 0  40px 0;
+    text-align: center;
+    background-image: url('../../images/zadnii-fon-dlya-saita.jpg');
+}
+.formInput{
+    
+    width: 350px;
+    margin:0;
+    padding: 9px 20px 9px 70px;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid rgb(89, 62, 145);
+    color: #454242;
+}
+
+.formBtn{
+    position: absolute;
+    top: 2px;
+    left: 1px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 34px;
+    font-size: 15px;
+    border-right: 1px solid rgb(89, 62, 145);
+    border-radius: 5px 0 0 5px;
+    background-color: #b8c0e3;
+}
+@media screen and (min-width: 768px) {
+    .formBtn {
+        left: 138px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .formBtn {
+        left: 394px;
+    }
+}

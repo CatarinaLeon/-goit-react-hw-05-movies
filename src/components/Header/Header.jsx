@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className={s.Header}>
+    <header className={s.header}>
       <NavLink
         to="/"
         activeClassName="active"

@@ -14,7 +14,7 @@ const HomePage = () => {
 
   return (
     <>
-      <h2>Trending today</h2>
+      <h2 style={{ textAlign: "center", marginTop: 0 }}>Trending today</h2>
       {movies && <MoviesList moviesList={movies} />}
     </>
   );

@@ -1,14 +1,42 @@
-.Card {
+.cardContainer{
+  padding-top: 25px;
+}
+.cardList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 35px;
+  gap: 15px;
   margin: 0;
   padding: 0;
 }
-.CardLi {
-  width: 250px;
+.cardItem {
+  width: 150px;
   height: auto;
+  padding-bottom: 5px;
   list-style-type: none;
   border-radius: 5px;
+  border-radius: 5px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+.cardImg{
+  width: 100%;
+  border-radius: 5px;
+}
+.cardText{
+  margin: 10px 0 0 0;
+  padding: 0 3px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+.cardSubject{
+  margin: 10px 0 0 0;
+  padding: 0 3px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+.cardCharaster{
+  font-weight: 500;
 }

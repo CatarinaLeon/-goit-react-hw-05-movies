@@ -50,31 +50,33 @@ const MoviesDetailsPage = () => {
   };
 
   return (
-    <div className={s.movieCard}>
-      <button type="button" onClick={handelGoBack}>
+    <>
+      <button type="button" onClick={handelGoBack} className={s.movieBtn}>
         Go back
       </button>
-      <div className={s.movieInfo}>
+      <div className={s.movieInfoContainer}>
         {movie.poster_path && (
           <img
             src={`${url}${movie.poster_path}`}
             alt={movie.title}
-            className={s.image}
+            className={s.movieInfoImage}
           />
         )}
-        <div className={s.movieDetails}>
-          <h2>
+        <div className={s.movieDetailsContainer}>
+          <h2 className={s.movieDetailsTitle}>
             {movie.title} ({movie.release_date})
           </h2>
-          <p>User Score: {movie.popularity}</p>
-          <h3>Overview</h3>
-          <p>{movie.overview}</p>
-          <h4>Genres</h4>
-          <ul className={s.genresList}>
+          <p className={s.movieDetailsSubject}>
+            User Score: {movie.popularity}
+          </p>
+          <h3 className={s.movieDetailsText}>Overview</h3>
+          <p className={s.movieDetailsSubject}>{movie.overview}</p>
+          <h4 className={s.movieDetailsText}>Genres</h4>
+          <ul className={s.movieDetailsList}>
             {movie.genres &&
               movie.genres.map((genre) => {
                 return (
-                  <li key={genre.name} className={s.genresList__item}>
+                  <li key={genre.name} className={s.movieDetailsItem}>
                     {genre.name}
                   </li>
                 );
@@ -82,28 +84,28 @@ const MoviesDetailsPage = () => {
           </ul>
         </div>
       </div>
-      <div className={s.additionalInformation}>
-        <h3>Additional information</h3>
-        <ul>
-          <li>
+      <div className={s.additionalInfoContainer}>
+        <h3 className={s.additionalInfoTitle}>Additional information</h3>
+        <ul className={s.additionalInfoList}>
+          <li className={s.additionalInfoItem}>
             <NavLink to={`${match.url}/cast`}>Cast</NavLink>
           </li>
-          <li>
+          <li className={s.additionalInfoItem}>
             <NavLink to={`${match.url}/reviews`}>Reviews</NavLink>
           </li>
         </ul>
-        <Suspense fallback={<Loader />}>
-          <Switch>
-            <Route exact path={`${match.path}/cast`}>
-              <Cast />
-            </Route>
-            <Route path={`${match.path}/reviews`}>
-              <Reviews />
-            </Route>
-          </Switch>
-        </Suspense>
       </div>
-    </div>
+      <Suspense fallback={<Loader />}>
+        <Switch>
+          <Route exact path={`${match.path}/cast`}>
+            <Cast />
+          </Route>
+          <Route path={`${match.path}/reviews`}>
+            <Reviews />
+          </Route>
+        </Switch>
+      </Suspense>
+    </>
   );
 };
 

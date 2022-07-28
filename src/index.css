@@ -1,48 +1,38 @@
 @import-normalize;
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 body {
   font-family: "Montserrat Alternates", sans-serif;
   color: black;
+  margin: 0;
+  /* position: fixed; */
+  background-image: url('./images/zadnii-fon-dlya-saita.jpg');
+  /* background-repeat: no-repeat; */
+  /* background-position: 100%; */
+  /* background-color: #19352f; */
+  /* min-height: 100%; */
+  /* width:  100vw; */
+    /* height: 100vh; */
+    overflow: hidden;
 }
 
 * {
   text-decoration: none;
 }
 
-input {
-  padding: 8px 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-}
 
 button {
-  padding: 7px 10px;
-  margin: 5px 5px;
-  border-radius: 5px;
-  border: black;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: center;
-  color: rgb(8, 8, 8);
-  cursor: pointer;
+  border: none;
   font-family: inherit;
-  font-size: 18px;
-  line-height: 24px;
   font-style: normal;
   font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgb(8, 8, 8);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
-img {
-  width: 250px;
-}
-/* li {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  max-width: calc(100vw - 80px);
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-  margin-top: 50px;
-} */
