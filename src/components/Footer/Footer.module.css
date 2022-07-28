@@ -3,15 +3,14 @@
     display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(77, 228, 252, 0.2);
+        background-color: rgb(77, 228, 252, 0.9);
 }
 .footerLink{
     margin-left: 10px;
-    /* font-family: 'Indie Flower', cursive; */
     font-family: 'Great Vibes', cursive;
     font-weight: 700;
     font-size: 22px;
-    color: #000;
+    color: rgb(0, 0, 146);
     cursor: pointer;
     display: flex;
     justify-content: center;

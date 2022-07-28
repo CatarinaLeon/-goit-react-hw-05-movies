@@ -7,16 +7,16 @@ import Section from "../../common/Section/Section";
 import Container from "../../common/Container/Container";
 
 const HomePage = lazy(() =>
-  import("../../Page/HomePage/HomePage" /* webpackChunkName:  "Home__Page" */)
+  import("../../page/HomePage/HomePage" /* webpackChunkName:  "Home__Page" */)
 );
 const MoviesPage = lazy(() =>
   import(
-    "../../Page/MoviesPage/MoviesPage" /* webpackChunkName:  "Movies__Page" */
+    "../../page/MoviesPage/MoviesPage" /* webpackChunkName:  "Movies__Page" */
   )
 );
 const MoviesDetailsPage = lazy(() =>
   import(
-    "../../Page/MoviesDetailsPage/MoviesDetailsPage" /* webpackChunkName:  "Movies__Details" */
+    "../../page/MoviesDetailsPage/MoviesDetailsPage" /* webpackChunkName:  "Movies__Details" */
   )
 );
 

@@ -10,6 +10,7 @@ const Header = () => {
         activeClassName="active"
         exact
         activeStyle={{ color: "red" }}
+        style={{ color: "rgb(0, 0, 146)", fontWeight: 700 }}
       >
         Home
       </NavLink>
@@ -17,6 +18,7 @@ const Header = () => {
         to="/movies"
         activeClassName="active"
         activeStyle={{ color: "red" }}
+        style={{ color: "rgb(0, 0, 146)", fontWeight: 700 }}
       >
         Movies
       </NavLink>

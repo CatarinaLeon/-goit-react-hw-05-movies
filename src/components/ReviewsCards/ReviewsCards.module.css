@@ -1,0 +1,19 @@
+.reviewList{
+    list-style: none;
+}
+
+.reviewTitle{
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+.reviewSubtitle{
+    font-weight: 700;
+    margin-left: 7px;
+    color: rgb(0, 0, 146);
+}
+.reviewText{
+    color: gray;
+    margin: 0;
+}

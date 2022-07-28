@@ -88,10 +88,22 @@ const MoviesDetailsPage = () => {
         <h3 className={s.additionalInfoTitle}>Additional information</h3>
         <ul className={s.additionalInfoList}>
           <li className={s.additionalInfoItem}>
-            <NavLink to={`${match.url}/cast`}>Cast</NavLink>
+            <NavLink
+              to={`${match.url}/cast`}
+              style={{ color: "black" }}
+              activeStyle={{ color: "red" }}
+            >
+              Cast
+            </NavLink>
           </li>
           <li className={s.additionalInfoItem}>
-            <NavLink to={`${match.url}/reviews`}>Reviews</NavLink>
+            <NavLink
+              to={`${match.url}/reviews`}
+              style={{ color: "black" }}
+              activeStyle={{ color: "red" }}
+            >
+              Reviews
+            </NavLink>
           </li>
         </ul>
       </div>

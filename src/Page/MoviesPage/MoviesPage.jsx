@@ -8,6 +8,9 @@ const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [input, setInput] = useState("");
   const [query, setQuery] = useState("");
+  console.log("movies", movies);
+  console.log("moviinputes", input);
+  console.log("query", query);
 
   useEffect(() => {
     if (!query) {
@@ -38,7 +41,11 @@ const MoviesPage = () => {
           <Search />
         </button>
       </form>
-      {movies && <MoviesList moviesList={movies} />}
+      {movies && movies.length > 0 ? (
+        <MoviesList moviesList={movies} />
+      ) : (
+        <div className={s.containerGif}></div>
+      )}
     </>
   );
 };
