@@ -1,0 +1,16 @@
+.moviesTitle{
+    text-align: center;
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 36px;
+    /* color: black; */
+}
+.lightTheme {
+    composes: moviesTitle;
+    color: black;
+}
+
+.darkTheme {
+    composes: moviesTitle;
+    color: #539bf5;
+}

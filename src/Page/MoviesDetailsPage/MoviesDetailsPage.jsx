@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense, lazy } from "react";
+import { useState, useEffect, Suspense, lazy, useContext } from "react";
 import {
   useParams,
   NavLink,
@@ -9,6 +9,9 @@ import {
 } from "react-router-dom";
 import { fetchMoviesDetails } from "../../services/api";
 import Loader from "../../components/Loader/Loader";
+import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
+import { ReactComponent as ArrowLeft } from "../../images/arrow_left.svg";
+
 import s from "./MoviesDetailsPage.module.css";
 
 const Cast = lazy(() =>
@@ -19,6 +22,7 @@ const Reviews = lazy(() =>
 );
 
 const MoviesDetailsPage = () => {
+  const { theme } = useContext(ThemeContext);
   const [movie, setMovie] = useState({});
   const { id } = useParams();
   const match = useRouteMatch();
@@ -52,6 +56,7 @@ const MoviesDetailsPage = () => {
   return (
     <>
       <button type="button" onClick={handelGoBack} className={s.movieBtn}>
+        <ArrowLeft className={s.arrowLeft} />
         Go back
       </button>
       <div className={s.movieInfoContainer}>
@@ -63,17 +68,29 @@ const MoviesDetailsPage = () => {
           />
         )}
         <div className={s.movieDetailsContainer}>
-          <h2 className={s.movieDetailsTitle}>
+          <h2 className={theme === themes.light ? s.lightTheme : s.darkTheme}>
             {movie.title} ({movie.release_date})
           </h2>
-          <p className={s.movieDetailsSubject} style={{ color: "grey" }}>
+          <p className={s.movieDetailsSubject} style={{ color: "#9e9999" }}>
             <span className={s.movieDetailsScore}>User Score:</span>
             {movie.popularity}
           </p>
           <h3 className={s.movieDetailsText}>Overview</h3>
-          <p className={s.movieDetailsSubject}>{movie.overview}</p>
+          <p
+            className={
+              theme === themes.light
+                ? s.movieDetailsSubjectLight
+                : s.movieDetailsSubjectDark
+            }
+          >
+            {movie.overview}
+          </p>
           <h4 className={s.movieDetailsText}>Genres</h4>
-          <ul className={s.movieDetailsList}>
+          <ul
+            className={
+              theme === themes.light ? s.lightThemeList : s.darkThemeList
+            }
+          >
             {movie.genres &&
               movie.genres.map((genre) => {
                 return (
@@ -86,7 +103,15 @@ const MoviesDetailsPage = () => {
         </div>
       </div>
       <div className={s.additionalInfoContainer}>
-        <h3 className={s.additionalInfoTitle}>Additional information</h3>
+        <h3
+          className={
+            theme === themes.light
+              ? s.additionalTitleLight
+              : s.additionalTitleDark
+          }
+        >
+          Additional information
+        </h3>
         <ul className={s.additionalInfoList}>
           <li className={s.additionalInfoItem}>
             <NavLink

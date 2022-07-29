@@ -12,7 +12,6 @@
     border-radius: 5px;
     border: 1px solid rgb(89, 62, 145);
     color: #454242;
-    background-color: rgb(77, 228, 252, 0.2);
 }
 
 .formBtn{
@@ -38,6 +37,7 @@
     background-position: 62%;
     border-radius: 5px;
     box-shadow: rgb(123 212 235) 0px 0px 10px 1px;
+    background-color: white;
 }
 @media screen and (min-width: 768px) {
     .formBtn {

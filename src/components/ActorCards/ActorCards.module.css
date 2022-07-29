@@ -37,7 +37,18 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
+  color: #9e9999;
 }
 .cardCharaster{
-  font-weight: 500;
+  font-weight: 700;
+  color: black;
+}
+.lightTheme {
+  composes: cardText;
+  color: black;
+}
+
+.darkTheme {
+  composes: cardText;
+  color: #539bf5;
 }

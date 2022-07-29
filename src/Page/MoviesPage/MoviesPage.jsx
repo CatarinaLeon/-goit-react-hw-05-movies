@@ -8,9 +8,6 @@ const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [input, setInput] = useState("");
   const [query, setQuery] = useState("");
-  console.log("movies", movies);
-  console.log("moviinputes", input);
-  console.log("query", query);
 
   useEffect(() => {
     if (!query) {

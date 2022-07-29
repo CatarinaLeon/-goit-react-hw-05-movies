@@ -13,6 +13,15 @@
     margin-left: 7px;
     color: rgb(0, 0, 146);
 }
+.lightTheme {
+    composes: reviewSubtitle;
+    color: rgb(0, 0, 146);
+}
+
+.darkTheme {
+    composes: reviewSubtitle;
+    color: #539bf5;
+}
 .reviewText{
     color: gray;
     margin: 0;

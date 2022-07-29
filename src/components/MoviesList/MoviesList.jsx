@@ -1,10 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+import { useContext } from "react";
+import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
+
 import s from "./MoviesList.module.css";
 
 const MoviesList = ({ moviesList }) => {
-  console.log("moviesList", moviesList);
+  const { theme } = useContext(ThemeContext);
+
   const url = "https://image.tmdb.org/t/p/w500";
+
   return (
     <ul className={s.list}>
       {moviesList.map((movie) => {
@@ -16,7 +22,11 @@ const MoviesList = ({ moviesList }) => {
                 alt={movie.title}
                 className={s.listImage}
               />
-              <p className={s.listText}>{movie.title}</p>
+              <p
+                className={theme === themes.light ? s.lightTheme : s.darkTheme}
+              >
+                {movie.title}
+              </p>
             </Link>
           </li>
         );
