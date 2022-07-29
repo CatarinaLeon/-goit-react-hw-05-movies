@@ -3,32 +3,42 @@ const BASE_URL = "https://api.themoviedb.org/3";
 
 //https://api.themoviedb.org/3/movie/550?api_key=8df760aa8648ab31ddd1bb787217673d
 
+// отримати популярні
 const fetchTrending = async () => {
   const res = await fetch(`${BASE_URL}/trending/movie/day?api_key=${KEY}`);
-  return res.ok ? res.json() : Promise.reject(new Error(res.statusText));
+  return res.ok ? res.json() : Promise.reject(new Error("Not Found"));
 };
+
+// отримати фільми за допомогою пошуку
 const fetchMoviesBySearch = async (query) => {
   const res = await fetch(
     `${BASE_URL}/search/movie?api_key=${KEY}&query=${query}`
   );
-  return res.ok ? res.json() : Promise.reject(new Error(res.statusText));
+  return res.ok ? res.json() : Promise.reject(new Error("Not Found"));
 };
+
+// отримати інформацію про фільм
 const fetchMoviesDetails = async (movieID) => {
   const res = await fetch(`${BASE_URL}/movie/${movieID}?api_key=${KEY}`);
-  return res.ok ? res.json() : Promise.reject(new Error(res.statusText));
+  return res.ok ? res.json() : Promise.reject(new Error("Not Found"));
 };
+
+// отримати титри фільмів
 const fetchMoviesCredits = async (movieID) => {
   const res = await fetch(
     `${BASE_URL}/movie/${movieID}/credits?api_key=${KEY}`
   );
-  return res.ok ? res.json() : Promise.reject(new Error(res.statusText));
+  return res.ok ? res.json() : Promise.reject(new Error("Not Found"));
 };
+
+// Отримати рецензії на фільми
 const fetchMoviesReviews = async (movieID) => {
   const res = await fetch(
     `${BASE_URL}/movie/${movieID}/reviews?api_key=${KEY}`
   );
-  return res.ok ? res.json() : Promise.reject(new Error(res.statusText));
+  return res.ok ? res.json() : Promise.reject(new Error("Not Found"));
 };
+
 export {
   fetchTrending,
   fetchMoviesBySearch,

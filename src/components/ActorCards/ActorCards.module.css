@@ -16,13 +16,13 @@
   list-style-type: none;
   border-radius: 5px;
   border-radius: 5px;
-  box-shadow: rgb(123 212 235) 0px 0px 10px 1px;
+  box-shadow: var(--borderColorCard) 0px 0px 10px 1px;
 }
 .cardImg{
   width: 100%;
   min-height: 225px;
   border-radius: 5px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--borderColorCard);
 }
 .cardText{
   margin: 10px 0 0 0;
@@ -37,18 +37,18 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  color: #9e9999;
+  color: var(--textColorSecond);
 }
 .cardCharaster{
   font-weight: 700;
-  color: black;
+  color: var(--textColorBleak);
 }
 .lightTheme {
   composes: cardText;
-  color: black;
+  color: var(--textColorBleak);
 }
 
 .darkTheme {
   composes: cardText;
-  color: #539bf5;
+  color: var(--textColorTheme);
 }

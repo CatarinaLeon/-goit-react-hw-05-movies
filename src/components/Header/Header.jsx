@@ -1,15 +1,11 @@
-import React from "react";
-import { useContext } from "react";
-import s from "./Header.module.css";
 import { NavLink } from "react-router-dom";
-
 import ThemeSwitcher from "../../common/ThemeSwitcher/ThemeSwitcher";
-import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
+
+import s from "./Header.module.css";
 
 const Header = () => {
-  const { theme } = useContext(ThemeContext);
   return (
-    <header className={theme === themes.light ? s.lightTheme : s.darkTheme}>
+    <header className={s.header}>
       <ThemeSwitcher />
       <NavLink
         to="/"

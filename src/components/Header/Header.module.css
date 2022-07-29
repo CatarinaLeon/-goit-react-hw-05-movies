@@ -5,18 +5,6 @@
   justify-content: center;
   gap: 50px;
   font-size: calc(10px + 2vmin);
-  color: white;
-  background-color: rgb(77, 228, 252, 0.9);
-}
-.lightTheme {
-  composes: header;
-  /* background-color: #fcfcfc; */
-  /* background-color: rgb(77, 228, 252, 0.9); */
-}
-
-.darkTheme {
-  composes: header;
-  color: #eee;
-  /* background-color: #444; */
-  /* background-color: rgba(8, 87, 171, 0.9); */
+  color: var(--textColorWhite);
+  background-color: var(--backgroundColorSecond);
 }

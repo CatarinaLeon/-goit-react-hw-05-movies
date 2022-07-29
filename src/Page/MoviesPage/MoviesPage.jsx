@@ -3,6 +3,8 @@ import { fetchMoviesBySearch } from "../../services/api";
 import MoviesList from "../../components/MoviesList/MoviesList";
 import { ReactComponent as Search } from "../../images/search.svg";
 import s from "./MoviesPage.module.css";
+import toast from "react-hot-toast";
+// import { toast } from "react-toastify";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -13,7 +15,16 @@ const MoviesPage = () => {
     if (!query) {
       return;
     }
-    fetchMoviesBySearch(query).then((data) => setMovies(data.results));
+    // console.log("query", query);
+    fetchMoviesBySearch(query).then((data) => {
+      console.log("data", data);
+      if (data.results.length === 0) {
+        return toast.error(
+          "Sorry, there are no more movies matching your search query!!!"
+        );
+      }
+      setMovies(data.results);
+    });
   }, [query]);
 
   const handleInput = (event) => {
@@ -41,7 +52,7 @@ const MoviesPage = () => {
       {movies && movies.length > 0 ? (
         <MoviesList moviesList={movies} />
       ) : (
-        <div className={s.containerGif}></div>
+        <div className={s.containerGif}>{/* <Toaster /> */}</div>
       )}
     </>
   );

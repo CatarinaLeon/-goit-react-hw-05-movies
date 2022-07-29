@@ -3,32 +3,37 @@
   padding: 5px 25px 5px 18px;
   display: flex;
   align-items: center;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
   border-radius: 5px;
-  border: 1px solid rgb(89, 62, 145);
-  background-color: rgba(1, 34, 180, 0.8);
-  color: white;
-  stroke: white;
+  border: 1px solid var(--borderColor);
+  background-color: var(--accentMain);
+  color: var(--textColorWhite);
+  transition-duration: 800ms;
 }
-.movieBtn:hover,
-.movieBtn:focus{
-  box-shadow: red 0px 0px 10px 1px;
+.movieBtn:hover{
+  box-shadow: var(--accentSecond) 0px 0px 10px 1px;
+  transition-duration: 800ms;
 }
 .arrowLeft{
   width: 20px;
   height: 20px;
   margin-right: 7px;
-  stroke: white;
+  stroke: var(--textColorWhite);
 }
 
 .movieInfoContainer {
   display: flex;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid var(--borderColor);
   padding-bottom: 15px;
 }
 .movieInfoImage {
   width: 320px;
   border-radius: 5px;
-  box-shadow: rgb(123 212 235) 0px 0px 10px 1px;
+  box-shadow: var(--borderColorCard) 0px 0px 10px 1px;
 }
 .movieDetailsContainer {
   padding: 20px 15px 20px 20px;
@@ -36,17 +41,16 @@
 }
 .movieDetailsTitle{
   margin: 0 0 25px 0;
- /* color: rgb(0, 0, 146); */
- font-weight: 700;
+  font-weight: 700;
 }
 .lightTheme {
   composes: movieDetailsTitle;
-  color: rgb(0, 0, 146);
+  color: var(--accentMain);
 }
 
 .darkTheme {
   composes: movieDetailsTitle;
-  color: #539bf5;
+  color: var(--textColorTheme);
 }
 .movieDetailsSubjectLight{
   margin: 0 0 20px 0;
@@ -54,13 +58,13 @@
 }
 .movieDetailsSubjectDark {
   margin: 0 0 20px 0;
-  color:#9e9999
+  color: var(--textColorSecond);
 }
 
 .movieDetailsScore{
   margin-right: 7px;
   font-weight: 500;
-  color:red;
+  color:var(--accentSecond);
 }
 .movieDetailsText{
   margin: 0 0 15px 0;
@@ -75,12 +79,12 @@
 }
 .lightThemeList {
   composes: movieDetailsList;
-  color: black;
+  color: var(--textColorBleak);
 }
 
 .darkThemeList {
   composes: movieDetailsList;
-  color: #9e9999;
+  color: var(--textColorSecond);
 }
 
 .movieDetailsItem:not(:first-child) {
@@ -89,22 +93,22 @@
 
 .additionalInfoContainer {
   padding: 25px 0 30px 0;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid var(--borderColor);
 }
 .additionalTitle{
   text-align: center;
   margin-top: 0;
-  color: rgb(0, 0, 146);
+  color: var(--accentMain);
 }
 .additionalTitleLight{
 text-align: center;
   margin-top: 0;
-  color: rgb(0, 0, 146);
+  color: var(--accentMain);
 }
 .additionalTitleDark{
 text-align: center;
   margin-top: 0;
-  color: #539bf5;
+  color: var(--textColorTheme);
 }
 .additionalInfoList{
   display: flex;
@@ -118,17 +122,19 @@ text-align: center;
   font-size: 24px;
     font-weight: 700;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--borderColor);
     width: 140px;
     height: 45px;
     justify-content: center;
     align-items: center;
     display: flex;
-    box-shadow: rgb(123 212 235) 0px 0px 10px 1px;
-    color: black;
+    box-shadow: var(--borderColorCard) 0px 0px 10px 1px;
+    color: var(--textColorBleak);
+    transition-duration: 800ms;
     
 }
 .additionalInfoItem:hover,
 .additionalInfoItem:focus{
-  background-color: rgb(123 212 235);
+  background-color: var(--borderColorCard);
+  transition-duration: 800ms;
 }

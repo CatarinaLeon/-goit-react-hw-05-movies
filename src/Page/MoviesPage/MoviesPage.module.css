@@ -3,6 +3,7 @@
     padding: 0px 0  40px 0;
     text-align: center;
 }
+
 .formInput{
     width: 350px;
     margin:0;
@@ -10,10 +11,15 @@
     font-family: "Montserrat Alternates", sans-serif;
     font-size: 14px;
     border-radius: 5px;
-    border: 1px solid rgb(89, 62, 145);
-    color: #454242;
+    border: 1px solid var(--accentMain);
+    color: var(--textColorSecond);
+    outline: none;
 }
 
+.formInput:focus{
+    border: 1px solid var(--accentSecond);
+    box-shadow: var(--accentSecond) 0px 0px 10px 1px;
+}
 .formBtn{
     position: absolute;
     top: 1px;
@@ -25,19 +31,19 @@
     width: 55px;
     height: 35px;
     font-size: 15px;
-    border-right: 1px solid rgb(89, 62, 145);
+    border-right: 1px solid var(--borderColor);
     border-radius: 5px 0 0 5px;
-    background-color: rgb(77, 228, 252, 0.9);
+    background-color: var(--borderColorCard);
 }
 .containerGif{
     margin:0 auto;
     height: 500px;
-    background-image: url('../../images/7Fmb.gif');
+    background-image: url('../../images/searchGif.gif');
     background-repeat: no-repeat;
     background-position: 62%;
     border-radius: 5px;
-    box-shadow: rgb(123 212 235) 0px 0px 10px 1px;
-    background-color: white;
+    box-shadow: var(--borderColorCard) 0px 0px 10px 1px;
+    background-color: var(--textColorWhite);
 }
 @media screen and (min-width: 768px) {
     .formBtn {

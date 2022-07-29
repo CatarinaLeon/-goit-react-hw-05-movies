@@ -51,8 +51,8 @@ const App = () => {
               </Switch>
             </Container>
           </Section>
+          <Footer />
         </Suspense>
-        <Footer />
       </ThemeContext.Provider>
       {/* <ToastContainer theme="colored" /> */}
     </>

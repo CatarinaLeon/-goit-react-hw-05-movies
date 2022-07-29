@@ -19,13 +19,18 @@ img {
 
 button {
   border: none;
-  font-family: inherit;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  color: rgb(8, 8, 8);
-  text-align: center;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root {
+  --backgroundColorDark: #444444;
+  --backgroundColorSecond: rgb(77, 228, 252, 0.9);
+  --accentMain: rgb(0, 0, 146);
+  --accentSecond: #ff0000;
+  --textColorWhite: #ffffff;
+  --textColorBleak: #000000;
+  --textColorSecond: #9e9999;
+  --textColorTheme: #539bf5;
+  --borderColorCard: rgb(123 212 235);
+  --borderColor: rgba(0, 0, 0, 0.5);
 }

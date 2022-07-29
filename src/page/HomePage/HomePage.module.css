@@ -3,14 +3,13 @@
     margin-top: 0;
     font-weight: 700;
     font-size: 36px;
-    /* color: black; */
 }
 .lightTheme {
     composes: moviesTitle;
-    color: black;
+    color: var(--textColorBleak);
 }
 
 .darkTheme {
     composes: moviesTitle;
-    color: #539bf5;
+    color: var(--textColorTheme);
 }

@@ -11,9 +11,13 @@
     width: 360px;
     font-weight: 500;
     border-radius: 5px;
-    box-shadow: rgb(123 212 235) 0px 0px 10px 1px;
+    box-shadow: var(--backgroundColorSecond) 0px 0px 10px 1px;
+    transition-duration: 1000ms;
 }
-
+.listItem:hover{
+    transform: scale(1.04);
+    transition-duration: 1000ms;
+}
 .listImage{
     width: 100%;
     object-fit: cover;
@@ -24,17 +28,17 @@
 .listText{
     margin: 0;
     padding: 20px 5px;
-    color: #000;
+    color: var(--textColorBleak);
 }
 
 .lightTheme {
     composes: listText;
-    color: black;
+    color: var(--textColorBleak);
 }
 
 .darkTheme {
     composes: listText;
-    color: #539bf5;
+    color: var(--textColorTheme);
 }
 
 @media screen and (min-width: 768px) {

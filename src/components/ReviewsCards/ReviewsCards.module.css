@@ -11,18 +11,18 @@
 .reviewSubtitle{
     font-weight: 700;
     margin-left: 7px;
-    color: rgb(0, 0, 146);
+    color: var(--accentMain);
 }
 .lightTheme {
     composes: reviewSubtitle;
-    color: rgb(0, 0, 146);
+    color: var(--accentMain);
 }
 
 .darkTheme {
     composes: reviewSubtitle;
-    color: #539bf5;
+    color: var(--textColorTheme);
 }
 .reviewText{
-    color: gray;
+    color: var(--textColorSecond);
     margin: 0;
 }
