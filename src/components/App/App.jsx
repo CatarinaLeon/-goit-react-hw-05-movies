@@ -1,5 +1,4 @@
-import { Suspense, lazy } from "react";
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import Header from "../Header/Header";
@@ -7,7 +6,6 @@ import Footer from "../Footer/Footer";
 import Section from "../../common/Section/Section";
 import Container from "../../common/Container/Container";
 import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
-// import { ToastContainer } from "react-toastify";
 
 const HomePage = lazy(() =>
   import("../../page/HomePage/HomePage" /* webpackChunkName:  "Home__Page" */)
@@ -54,7 +52,6 @@ const App = () => {
           <Footer />
         </Suspense>
       </ThemeContext.Provider>
-      {/* <ToastContainer theme="colored" /> */}
     </>
   );
 };

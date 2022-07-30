@@ -25,6 +25,7 @@ button {
 :root {
   --backgroundColorDark: #444444;
   --backgroundColorSecond: rgb(77, 228, 252, 0.9);
+  --backgroundColorThird: #539bf5;
   --accentMain: rgb(0, 0, 146);
   --accentSecond: #ff0000;
   --textColorWhite: #ffffff;

@@ -1,7 +1,8 @@
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { fetchMoviesReviews } from "../../services/api";
 import ReviewsCards from "../../components/ReviewsCards/ReviewsCards";
+import BtnScrollUp from "../../common/BtnScrollUp/BtnScrollUp";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -16,7 +17,10 @@ const Reviews = () => {
   return (
     <>
       {reviews.length ? (
-        <ReviewsCards reviewsContent={reviews} />
+        <>
+          <ReviewsCards reviewsContent={reviews} />
+          <BtnScrollUp />
+        </>
       ) : (
         <p>We don't have any reviews for this movie</p>
       )}

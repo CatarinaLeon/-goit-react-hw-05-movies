@@ -1,10 +1,9 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { fetchTrending } from "../../services/api";
 import MoviesList from "../../components/MoviesList/MoviesList";
-import s from "./HomePage.module.css";
-import { useContext } from "react";
 import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
+
+import s from "./HomePage.module.css";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);

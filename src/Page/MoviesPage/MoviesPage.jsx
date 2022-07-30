@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { fetchMoviesBySearch } from "../../services/api";
 import MoviesList from "../../components/MoviesList/MoviesList";
 import { ReactComponent as Search } from "../../images/search.svg";
-import s from "./MoviesPage.module.css";
 import toast from "react-hot-toast";
+
+import s from "./MoviesPage.module.css";
 // import { toast } from "react-toastify";
 
 const MoviesPage = () => {
@@ -52,7 +53,7 @@ const MoviesPage = () => {
       {movies && movies.length > 0 ? (
         <MoviesList moviesList={movies} />
       ) : (
-        <div className={s.containerGif}>{/* <Toaster /> */}</div>
+        <div className={s.containerGif}></div>
       )}
     </>
   );

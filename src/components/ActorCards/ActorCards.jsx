@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import BtnScrollUp from "../../common/BtnScrollUp/BtnScrollUp";
 import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
 
 import defaultImg from "../../images/NoImage_Available.jpg";
@@ -34,6 +35,7 @@ const ActorCards = ({ actorsList }) => {
           );
         })}
       </ul>
+      <BtnScrollUp />
     </div>
   );
 };
