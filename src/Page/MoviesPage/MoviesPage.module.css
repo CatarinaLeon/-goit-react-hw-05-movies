@@ -1,10 +1,17 @@
 .form{
-    padding: 0px 0  40px 0;
+    margin: 0px auto  40px auto;
     text-align: center;
     display: flex;
     justify-content: center;
+    width: 275px;
+    border-radius: 5px;
+    transition-duration: 800ms;
 }
 
+.form:hover{
+    box-shadow: var(--accentSecond) 0px 0px 10px 1px;
+    transition-duration: 800ms;
+}
 .formInput{
     margin:0;
     padding: 9px 20px 9px 20px;
@@ -47,6 +54,9 @@
 @media screen and (min-width: 480px) {
     .formInput {
         width: 350px;
+    }
+    .form{
+        width: 446px;
     }
 }
 
