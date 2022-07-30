@@ -5,13 +5,15 @@ import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { ReactComponent as SearchIcon } from "../../images/search.svg";
 
 import s from "./MoviesPage.module.css";
+
 Notify.init({
-  className: "notiflix-notify",
-  width: "280px",
-  position: "right-top",
-  distance: "10px",
-  opacity: 1,
+  position: "center-top",
+  distance: "155px",
+  fontSize: "20px",
+  timeout: 2500,
+  width: "27%",
 });
+
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [input, setInput] = useState("");
@@ -23,13 +25,7 @@ const MoviesPage = () => {
     }
     fetchMoviesBySearch(query).then((data) => {
       if (data.results.length === 0) {
-        Notify.failure("Write the correct Movie name, please!", {
-          position: "center-top",
-          distance: "155px",
-          fontSize: "20px",
-          timeout: 2500,
-          width: "27%",
-        });
+        Notify.failure("Write the correct Movie name, please!");
         return;
       }
       setMovies(data.results);
@@ -44,13 +40,7 @@ const MoviesPage = () => {
     event.preventDefault();
     setQuery(input);
     if (input.trim() === "") {
-      Notify.failure("Write the name of the movie, please!", {
-        position: "center-top",
-        distance: "155px",
-        fontSize: "20px",
-        timeout: 2500,
-        width: "27%",
-      });
+      Notify.failure("Write the name of the movie, please!");
       return;
     }
   };
