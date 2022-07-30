@@ -29,6 +29,7 @@ const MoviesList = ({ moviesList }) => {
                 >
                   {movie.title}
                 </p>
+                <span className={s.containerVote}>{movie.vote_average}</span>
               </Link>
             </li>
           );

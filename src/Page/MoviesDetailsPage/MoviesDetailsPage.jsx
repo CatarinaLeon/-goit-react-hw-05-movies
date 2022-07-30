@@ -29,20 +29,6 @@ const MoviesDetailsPage = () => {
   const history = useHistory();
   const url = "https://image.tmdb.org/t/p/w500";
 
-  //    useEffect(() => {
-  //   const getMoviesById = async () => {
-  //     try {
-  //       const movies = await fetchMoviesDetails(id);
-
-  //       setMovie(movies);
-  //     }
-  //     catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   getMoviesById();
-  // }, [id]);
-
   useEffect(() => {
     fetchMoviesDetails(id).then((data) => {
       setMovie(data);

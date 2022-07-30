@@ -16,7 +16,7 @@ const MoviesPage = () => {
       return;
     }
     fetchMoviesBySearch(query).then((data) => {
-      if (data.results.length) {
+      if (data.results.length === 0) {
         Notify.failure("Write the correct Movie name, please!", {
           position: "top-right",
           distance: "95px",
