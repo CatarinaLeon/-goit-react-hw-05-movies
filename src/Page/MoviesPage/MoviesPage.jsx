@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { fetchMoviesBySearch } from "../../services/api";
 import MoviesList from "../../components/MoviesList/MoviesList";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { ReactComponent as Search } from "../../images/search.svg";
-import toast from "react-hot-toast";
 
 import s from "./MoviesPage.module.css";
-// import { toast } from "react-toastify";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -16,13 +15,16 @@ const MoviesPage = () => {
     if (!query) {
       return;
     }
-    // console.log("query", query);
     fetchMoviesBySearch(query).then((data) => {
-      console.log("data", data);
-      if (data.results.length === 0) {
-        return toast.error(
-          "Sorry, there are no more movies matching your search query!!!"
-        );
+      if (data.results.length) {
+        Notify.failure("Write the correct Movie name, please!", {
+          position: "top-right",
+          distance: "95px",
+          fontSize: "20px",
+          timeout: 2500,
+          width: "27%",
+        });
+        return;
       }
       setMovies(data.results);
     });
@@ -35,6 +37,16 @@ const MoviesPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setQuery(input);
+    if (input.trim() === "") {
+      Notify.failure("Write the name of the movie, please!", {
+        position: "top-right",
+        distance: "95px",
+        fontSize: "20px",
+        timeout: 2500,
+        width: "27%",
+      });
+      return;
+    }
   };
 
   return (
