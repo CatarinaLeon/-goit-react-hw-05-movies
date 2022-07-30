@@ -2,10 +2,16 @@ import { useState, useEffect } from "react";
 import { fetchMoviesBySearch } from "../../services/api";
 import MoviesList from "../../components/MoviesList/MoviesList";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
-import { ReactComponent as Search } from "../../images/search.svg";
+import { ReactComponent as SearchIcon } from "../../images/search.svg";
 
 import s from "./MoviesPage.module.css";
-
+Notify.init({
+  className: "notiflix-notify",
+  width: "280px",
+  position: "right-top",
+  distance: "10px",
+  opacity: 1,
+});
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [input, setInput] = useState("");
@@ -18,8 +24,8 @@ const MoviesPage = () => {
     fetchMoviesBySearch(query).then((data) => {
       if (data.results.length === 0) {
         Notify.failure("Write the correct Movie name, please!", {
-          position: "top-right",
-          distance: "95px",
+          position: "center-top",
+          distance: "155px",
           fontSize: "20px",
           timeout: 2500,
           width: "27%",
@@ -39,8 +45,8 @@ const MoviesPage = () => {
     setQuery(input);
     if (input.trim() === "") {
       Notify.failure("Write the name of the movie, please!", {
-        position: "top-right",
-        distance: "95px",
+        position: "center-top",
+        distance: "155px",
         fontSize: "20px",
         timeout: 2500,
         width: "27%",
@@ -52,15 +58,15 @@ const MoviesPage = () => {
   return (
     <>
       <form onSubmit={handleSubmit} className={s.form}>
+        <button type="submit" className={s.formBtn}>
+          <SearchIcon />
+        </button>
         <input
           onInput={handleInput}
           value={input}
           className={s.formInput}
           placeholder="Search movies"
         ></input>
-        <button type="submit" className={s.formBtn}>
-          <Search />
-        </button>
       </form>
       {movies && movies.length > 0 ? (
         <MoviesList moviesList={movies} />

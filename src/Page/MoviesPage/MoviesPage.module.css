@@ -1,39 +1,38 @@
 .form{
-    position: relative;
     padding: 0px 0  40px 0;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .formInput{
-    width: 350px;
     margin:0;
-    padding: 9px 20px 9px 70px;
+    padding: 9px 20px 9px 20px;
     font-family: "Montserrat Alternates", sans-serif;
     font-size: 14px;
-    border-radius: 5px;
-    border: 1px solid var(--accentMain);
+    border-radius: 0  5px 5px 0;
+    border-top: 1px solid var(--accentMain);
+    border-bottom: 1px solid var(--accentMain);
+    border-right: 1px solid var(--accentMain);
+    border-left: none;
     color: var(--textColorSecond);
     outline: none;
+    box-shadow: var(--backgroundColorThird) 0px 0px 2px 1px;
 }
 
-.formInput:focus{
-    border: 1px solid var(--accentSecond);
-    box-shadow: var(--accentSecond) 0px 0px 10px 1px;
-}
 .formBtn{
-    position: absolute;
-    top: 1px;
-    left: 1px;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 55px;
-    height: 35px;
+    height: 37px;
     font-size: 15px;
-    border-right: 1px solid var(--borderColor);
     border-radius: 5px 0 0 5px;
     background-color: var(--borderColorCard);
+    border: 1px solid var(--accentMain);
+    box-shadow: var(--backgroundColorThird) 0px 0px 2px 1px;
+    
 }
 .containerGif{
     margin:0 auto;
@@ -45,16 +44,13 @@
     box-shadow: var(--borderColorCard) 0px 0px 10px 1px;
     background-color: var(--textColorWhite);
 }
-@media screen and (min-width: 768px) {
-    .formBtn {
-        left: 138px;
+@media screen and (min-width: 480px) {
+    .formInput {
+        width: 350px;
     }
 }
 
 @media screen and (min-width: 1280px) {
-    .formBtn {
-        left: 394px;
-    }
     .containerGif{
         width: 800px;
     }
