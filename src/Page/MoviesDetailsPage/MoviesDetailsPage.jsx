@@ -8,7 +8,7 @@ import {
   useHistory,
 } from "react-router-dom";
 import { fetchMoviesDetails } from "../../services/api";
-import Loader from "../../components/Loader/Loader";
+import Loader from "../../common/Loader/Loader";
 import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
 import { ReactComponent as ArrowLeft } from "../../images/arrow_left.svg";
 

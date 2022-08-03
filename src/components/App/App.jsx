@@ -1,6 +1,6 @@
 import { Suspense, lazy, useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import Loader from "../Loader/Loader";
+import Loader from "../../common/Loader/Loader";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Section from "../../common/Section/Section";
