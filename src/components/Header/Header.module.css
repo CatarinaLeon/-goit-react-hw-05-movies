@@ -1,11 +1,13 @@
 .header {
-  height: 85px;
+  position: relative;
+  padding: 40px 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 50px;
   font-size: calc(10px + 2vmin);
   color: var(--textColorWhite);
+  box-shadow: var(--backgroundColorSecond) 0px 0px 10px 1px;
 }
 
 .lightTheme {

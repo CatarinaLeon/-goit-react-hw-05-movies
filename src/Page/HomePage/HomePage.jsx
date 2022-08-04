@@ -8,6 +8,7 @@ import s from "./HomePage.module.css";
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const { theme } = useContext(ThemeContext);
+  console.log("movies", movies);
 
   useEffect(() => {
     fetchTrending().then((data) => {
@@ -17,9 +18,9 @@ const HomePage = () => {
 
   return (
     <>
-      <h2 className={theme === themes.light ? s.lightTheme : s.darkTheme}>
+      <h1 className={theme === themes.light ? s.lightTheme : s.darkTheme}>
         Trending today
-      </h2>
+      </h1>
       {movies && <MoviesList moviesList={movies} />}
     </>
   );

@@ -1,10 +1,35 @@
 .footer{
     padding: 40px 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-    /* background-color: var(--backgroundColorSecond); */
+    flex-direction: column;
+    box-shadow: var(--backgroundColorSecond) 0px 0px 10px 1px;
 }
+@media screen and (min-width: 768px) {
+    .footer {
+        flex-direction: row;        
+        justify-content: center;
+        align-items: center;
+        
+    }
+}
+
+.footerHeart {
+    margin: 0 10px;
+    fill: var(--accentSecond);
+    animation: heartbeating 2s infinite;
+}
+
+@keyframes heartbeating {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.5);
+    }
+}
+
 .footerLink{
     margin-left: 10px;
     display: flex;

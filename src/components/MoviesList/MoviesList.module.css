@@ -9,7 +9,7 @@
 }
 .listItem{
     position: relative;
-    width: 360px;
+    width: 320px;
     font-weight: 500;
     border-radius: 5px;
     box-shadow: var(--backgroundColorSecond) 0px 0px 10px 1px;
@@ -60,7 +60,7 @@
 }
 @media screen and (min-width: 768px) {
     .listItem{
-        width: 339px;
+        width: 300px;
     }
 }
 
@@ -69,6 +69,6 @@
         gap:30px
     }
     .listItem {
-        width: 284px;
+        width: 350px;
     }
 }

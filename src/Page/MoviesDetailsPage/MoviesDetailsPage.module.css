@@ -1,5 +1,5 @@
 .movieBtn {
-  margin-bottom: 25px;
+  margin: 0 auto 25px auto;
   padding: 5px 25px 5px 18px;
   display: flex;
   align-items: center;
@@ -27,9 +27,12 @@
 
 .movieInfoContainer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   border-bottom: 2px solid var(--borderColor);
   padding-bottom: 15px;
 }
+
 .movieInfoImage {
   width: 320px;
   border-radius: 5px;
@@ -75,7 +78,8 @@
   padding-inline-start: 0px;
   list-style: none;
   display: flex;
-  height: 25px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .lightThemeList {
   composes: movieDetailsList;
@@ -85,10 +89,6 @@
 .darkThemeList {
   composes: movieDetailsList;
   color: var(--textColorSecond);
-}
-
-.movieDetailsItem:not(:first-child) {
-  margin-left: 15px;
 }
 
 .additionalInfoContainer {
@@ -137,4 +137,22 @@ text-align: center;
 .additionalInfoItem:focus{
   background-color: var(--borderColorCard);
   transition-duration: 800ms;
+}
+
+@media screen and (min-width: 768px) {
+  .movieInfoContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .movieBtn{
+    margin: 0 0 25px 0;
+  }
+  .movieDetailsContainer{
+    width: 360px; 
+  }
+}
+@media screen and (min-width: 1280px){
+.movieDetailsContainer {
+    width: 500px;
+  }
 }
