@@ -78,8 +78,7 @@
   padding-inline-start: 0px;
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
 }
 .lightThemeList {
   composes: movieDetailsList;
