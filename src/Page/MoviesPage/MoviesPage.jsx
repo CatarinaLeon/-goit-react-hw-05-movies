@@ -8,7 +8,7 @@ import s from "./MoviesPage.module.css";
 
 Notify.init({
   position: "center-top",
-  distance: "155px",
+  distance: "195px",
   fontSize: "20px",
   timeout: 2500,
   width: "27%",
