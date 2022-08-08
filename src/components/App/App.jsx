@@ -1,28 +1,12 @@
-import { Suspense, lazy, useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Suspense, useState, useEffect } from "react";
 import Loader from "../../common/Loader/Loader";
 import Header from "../Header/Header";
+import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import Section from "../../common/Section/Section";
-import Container from "../../common/Container/Container";
 import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
 import * as storage from "../../services/localStorage";
 
-const HomePage = lazy(() =>
-  import("../../page/HomePage/HomePage" /* webpackChunkName:  "Home__Page" */)
-);
-const MoviesPage = lazy(() =>
-  import(
-    "../../page/MoviesPage/MoviesPage" /* webpackChunkName:  "Movies__Page" */
-  )
-);
-const MoviesDetailsPage = lazy(() =>
-  import(
-    "../../page/MoviesDetailsPage/MoviesDetailsPage" /* webpackChunkName:  "Movies__Details" */
-  )
-);
-
-const App = () => {
+export default function App() {
   const [theme, setTheme] = useState(
     () => storage.get("theme") ?? themes.light
   );
@@ -42,26 +26,10 @@ const App = () => {
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <Suspense fallback={<Loader />}>
           <Header />
-          <Section>
-            <Container>
-              <Switch>
-                <Route exact path="/">
-                  <HomePage />
-                </Route>
-                <Route exact path="/movies">
-                  <MoviesPage />
-                </Route>
-                <Route path="/movies/:id">
-                  <MoviesDetailsPage />
-                </Route>
-              </Switch>
-            </Container>
-          </Section>
+          <Main />
           <Footer />
         </Suspense>
       </ThemeContext.Provider>
     </>
   );
-};
-
-export default App;
+}
