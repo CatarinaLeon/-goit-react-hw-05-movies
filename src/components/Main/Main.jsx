@@ -17,20 +17,20 @@ const MoviesDetailsPage = lazy(() =>
   )
 );
 
-export default function Main() {
+export default function Main({ lang }) {
   return (
     <main>
       <Section>
         <Container>
           <Switch>
             <Route exact path="/">
-              <HomePage />
+              <HomePage lang={lang} />
             </Route>
             <Route exact path="/movies">
-              <MoviesPage />
+              <MoviesPage lang={lang} />
             </Route>
             <Route path="/movies/:id">
-              <MoviesDetailsPage />
+              <MoviesDetailsPage lang={lang} />
             </Route>
           </Switch>
         </Container>

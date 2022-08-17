@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchMoviesCredits } from "../../services/api";
+import { getDataMovies } from "../../services/api";
 import ActorCards from "../../components/ActorCards/ActorCards";
 
-const Cast = () => {
+const Cast = ({ lang }) => {
   const [cast, setCast] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
-    fetchMoviesCredits(id).then((data) => {
+    getDataMovies(`movie/${id}/credits`, 1, lang).then((data) => {
       setCast(data.cast);
     });
-  }, [id]);
+  }, [id, lang]);
 
   return <>{cast && <ActorCards actorsList={cast} />}</>;
 };

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { fetchMoviesBySearch } from "../../services/api";
+import { getDataMovies } from "../../services/api";
 import MoviesList from "../../components/MoviesList/MoviesList";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { ReactComponent as SearchIcon } from "../../images/search.svg";
+import { useTranslation } from "react-i18next";
 
 import s from "./MoviesPage.module.css";
 
@@ -14,23 +15,24 @@ Notify.init({
   width: "27%",
 });
 
-const MoviesPage = () => {
+const MoviesPage = ({ lang }) => {
   const [movies, setMovies] = useState([]);
   const [input, setInput] = useState("");
   const [query, setQuery] = useState("");
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!query) {
       return;
     }
-    fetchMoviesBySearch(query).then((data) => {
+    getDataMovies("search/movie", 1, lang, query).then((data) => {
       if (data.results.length === 0) {
         Notify.failure("Write the correct Movie name, please!");
         return;
       }
       setMovies(data.results);
     });
-  }, [query]);
+  }, [query, lang]);
 
   const handleInput = (event) => {
     setInput(event.target.value);
@@ -55,7 +57,7 @@ const MoviesPage = () => {
           onInput={handleInput}
           value={input}
           className={s.formInput}
-          placeholder="Search movies"
+          placeholder={t("pages.input")}
         ></input>
       </form>
       {movies && movies.length > 0 ? (

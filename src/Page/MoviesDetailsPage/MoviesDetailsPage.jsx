@@ -7,7 +7,9 @@ import {
   useRouteMatch,
   useHistory,
 } from "react-router-dom";
-import { fetchMoviesDetails } from "../../services/api";
+import { useTranslation } from "react-i18next";
+import { getDataMovies } from "../../services/api";
+import dateFormat from "dateformat";
 import Loader from "../../common/Loader/Loader";
 import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
 import { ReactComponent as ArrowLeft } from "../../images/arrow_left.svg";
@@ -21,19 +23,20 @@ const Reviews = lazy(() =>
   import("../Reviews/Reviews" /* webpackChunkName:  "Reviews__Page" */)
 );
 
-const MoviesDetailsPage = () => {
+const MoviesDetailsPage = ({ lang }) => {
   const { theme } = useContext(ThemeContext);
   const [movie, setMovie] = useState({});
   const { id } = useParams();
   const match = useRouteMatch();
   const history = useHistory();
   const url = "https://image.tmdb.org/t/p/w500";
+  const { t } = useTranslation();
 
   useEffect(() => {
-    fetchMoviesDetails(id).then((data) => {
+    getDataMovies(`movie/${id}`, 1, lang).then((data) => {
       setMovie(data);
     });
-  }, [id]);
+  }, [id, lang]);
 
   const handelGoBack = () => {
     history.goBack();
@@ -43,7 +46,7 @@ const MoviesDetailsPage = () => {
     <>
       <button type="button" onClick={handelGoBack} className={s.movieBtn}>
         <ArrowLeft className={s.arrowLeft} />
-        Go back
+        {t("pages.btn")}
       </button>
       <div className={s.movieInfoContainer}>
         {movie.poster_path && (
@@ -55,13 +58,19 @@ const MoviesDetailsPage = () => {
         )}
         <div className={s.movieDetailsContainer}>
           <h2 className={theme === themes.light ? s.lightTheme : s.darkTheme}>
-            {movie.title} ({movie.release_date})
+            {movie.title}
           </h2>
-          <p className={s.movieDetailsSubject} style={{ color: "#9e9999" }}>
-            <span className={s.movieDetailsScore}>User Score:</span>
-            {movie.popularity}
+          <p className={s.movieDetailsSubject}>
+            {t("pages.Release")}:
+            <span className={s.movieDetailsScore}>
+              {dateFormat(movie.release_date, "dd.mm.yyyy")}
+            </span>
           </p>
-          <h3 className={s.movieDetailsText}>Overview</h3>
+          <p className={s.movieDetailsSubject}>
+            {t("pages.UserScore")}:
+            <span className={s.movieDetailsScore}>{movie.popularity}</span>
+          </p>
+          <h4 className={s.movieDetailsText}>{t("pages.Overview")}</h4>
           <p
             className={
               theme === themes.light
@@ -71,7 +80,7 @@ const MoviesDetailsPage = () => {
           >
             {movie.overview}
           </p>
-          <h4 className={s.movieDetailsText}>Genres</h4>
+          <h4 className={s.movieDetailsText}>{t("pages.Genres")}</h4>
           <ul
             className={
               theme === themes.light ? s.lightThemeList : s.darkThemeList
@@ -96,7 +105,7 @@ const MoviesDetailsPage = () => {
               : s.additionalTitleDark
           }
         >
-          Additional information
+          {t("pages.titleInfo")}
         </h3>
         <ul className={s.additionalInfoList}>
           <li className={s.additionalInfoItem}>
@@ -105,7 +114,7 @@ const MoviesDetailsPage = () => {
               style={{ color: "black" }}
               activeStyle={{ color: "red" }}
             >
-              Cast
+              {t("pages.btnCast")}
             </NavLink>
           </li>
           <li className={s.additionalInfoItem}>
@@ -114,7 +123,7 @@ const MoviesDetailsPage = () => {
               style={{ color: "black" }}
               activeStyle={{ color: "red" }}
             >
-              Reviews
+              {t("pages.btnReviews")}
             </NavLink>
           </li>
         </ul>
@@ -122,10 +131,10 @@ const MoviesDetailsPage = () => {
       <Suspense fallback={<Loader />}>
         <Switch>
           <Route exact path={`${match.path}/cast`}>
-            <Cast />
+            <Cast lang={lang} />
           </Route>
           <Route path={`${match.path}/reviews`}>
-            <Reviews />
+            <Reviews lang={lang} />
           </Route>
         </Switch>
       </Suspense>

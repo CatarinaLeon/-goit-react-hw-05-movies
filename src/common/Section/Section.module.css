@@ -1,5 +1,10 @@
 .section {
-    padding: 40px 0 50px 0;
+    padding: 50px 0 50px 0;
+    /* background-image: url(../../images/cinema/pngegg15.png);
+    background-repeat: no-repeat;
+    background-position: 100% 25%;
+    background-size: 14%;
+    background-attachment: fixed; */
 }
 .lightTheme {
     composes: section;

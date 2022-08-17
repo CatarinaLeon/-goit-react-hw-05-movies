@@ -1,0 +1,27 @@
+{
+  "header": {
+    "main": "Home",
+    "movies": "Movies"
+  },
+  "pages": {
+    "title": "Trending today",
+    "input": "Search movies",
+    "btn": "Go back",
+    "Release": "Release date",
+    "UserScore": "User Score",
+    "Overview": "Overview",
+    "Genres": "Genres",
+    "titleInfo": "Additional information",
+    "btnCast": "Cast",
+    "btnReviews": "Reviews"
+  },
+  "reviews": {
+    "p": "We don't have any reviews for this movie",
+    "Author": "Author",
+    "Character": "Character"
+  },
+  "footer": {
+    "info": "Developed with",
+    "by": "by"
+  }
+}

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import BtnScrollUp from "../../common/BtnScrollUp/BtnScrollUp";
 import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
+import { ReactComponent as Rating } from "../../images/rating_like.svg";
 
 import s from "./MoviesList.module.css";
 
@@ -29,7 +30,10 @@ const MoviesList = ({ moviesList }) => {
                 >
                   {movie.title}
                 </p>
-                <span className={s.containerVote}>{movie.vote_average}</span>
+                <span className={s.containerVote}>
+                  <Rating className={s.iconVote} />
+                  {(Math.floor(movie.vote_average * 100) / 100).toFixed(1)}
+                </span>
               </Link>
             </li>
           );

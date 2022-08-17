@@ -6,7 +6,17 @@ import Footer from "../Footer/Footer";
 import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
 import * as storage from "../../services/localStorage";
 
+const langs = {
+  uk: "uk",
+  en: "en",
+};
+
 export default function App() {
+  const [lang, setLang] = useState(
+    localStorage.getItem("i18nextLng" ?? langs.en)
+  );
+  // console.log("lang", lang);
+
   const [theme, setTheme] = useState(
     () => storage.get("theme") ?? themes.light
   );
@@ -21,12 +31,16 @@ export default function App() {
       prevTheme === themes.light ? themes.dark : themes.light
     );
 
+  const toggleLang = () => {
+    setLang((prevLang) => (prevLang === langs.uk ? langs.en : langs.uk));
+  };
+
   return (
     <>
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <Suspense fallback={<Loader />}>
-          <Header />
-          <Main />
+          <Header toggleLang={toggleLang} />
+          <Main lang={lang} />
           <Footer />
         </Suspense>
       </ThemeContext.Provider>

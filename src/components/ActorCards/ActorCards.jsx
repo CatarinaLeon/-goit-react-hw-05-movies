@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import BtnScrollUp from "../../common/BtnScrollUp/BtnScrollUp";
 import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
 
@@ -7,6 +8,7 @@ import s from "./ActorCards.module.css";
 
 const ActorCards = ({ actorsList }) => {
   const { theme } = useContext(ThemeContext);
+  const { t } = useTranslation();
 
   return (
     <div className={s.cardContainer}>
@@ -29,7 +31,10 @@ const ActorCards = ({ actorsList }) => {
                 {name}
               </p>
               <p className={s.cardSubject}>
-                <span className={s.cardCharaster}>Charaster:</span> {character}
+                <span className={s.cardCharaster}>
+                  {t("reviews.Character")}:
+                </span>
+                {character}
               </p>
             </li>
           );

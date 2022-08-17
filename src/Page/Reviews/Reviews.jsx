@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchMoviesReviews } from "../../services/api";
+import { useTranslation } from "react-i18next";
+import { getDataMovies } from "../../services/api";
 import ReviewsCards from "../../components/ReviewsCards/ReviewsCards";
 import BtnScrollUp from "../../common/BtnScrollUp/BtnScrollUp";
 
-const Reviews = () => {
+const Reviews = ({ lang }) => {
   const [reviews, setReviews] = useState([]);
   const { id } = useParams();
+  const { t } = useTranslation();
 
   useEffect(() => {
-    fetchMoviesReviews(id).then((data) => {
+    getDataMovies(`movie/${id}/reviews`, 1, lang).then((data) => {
       setReviews(data.results);
     });
-  }, [id]);
+  }, [id, lang]);
 
   return (
     <>
@@ -22,7 +24,7 @@ const Reviews = () => {
           <BtnScrollUp />
         </>
       ) : (
-        <p>We don't have any reviews for this movie</p>
+        <p>{t("reviews.p")}</p>
       )}
     </>
   );

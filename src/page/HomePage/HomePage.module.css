@@ -1,15 +1,18 @@
 .moviesTitle{
     text-align: center;
     margin-top: 0;
+    margin-bottom: 50px;
     font-weight: 700;
     font-size: 36px;
 }
 .lightTheme {
     composes: moviesTitle;
     color: var(--textColorBleak);
+    text-shadow: 3px 3px 4px var(--textColorTheme);
 }
 
 .darkTheme {
     composes: moviesTitle;
     color: var(--textColorTheme);
+    text-shadow: 3px 3px 4px var(--accentMain);
 }

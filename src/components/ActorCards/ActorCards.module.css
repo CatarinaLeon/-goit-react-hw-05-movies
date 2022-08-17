@@ -42,6 +42,7 @@
 .cardCharaster{
   font-weight: 700;
   color: var(--textColorBleak);
+  margin-right: 3px;
 }
 .lightTheme {
   composes: cardText;

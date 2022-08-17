@@ -1,7 +1,7 @@
 .conteiner {
     position: absolute;
-    top: 41px;
-    left: 50px;
+    top: 105px;
+    right: 30px;
 }
 
 .switch {
@@ -76,4 +76,16 @@
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+    .conteiner {
+        top: 105px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .conteiner {
+    top: 135px;
+    }
 }
