@@ -1,13 +1,9 @@
-// import * as storage from "../services/localStorage";
-
 const KEY = "8df760aa8648ab31ddd1bb787217673d";
 // const BASE_URL = "https://api.themoviedb.org/3";
 
 //https://api.themoviedb.org/3/movie/550?api_key=8df760aa8648ab31ddd1bb787217673d
 
 const axios = require("axios");
-
-// storage.get("i18nextLng");
 
 export const getDataMovies = async (endPoint, page = 1, lang, query) => {
   try {

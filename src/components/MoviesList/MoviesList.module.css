@@ -51,7 +51,7 @@
     min-width: 55px;
     padding: 5px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     font-weight: 700;
     border-radius: 5px;

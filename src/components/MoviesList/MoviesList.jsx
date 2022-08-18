@@ -32,7 +32,8 @@ const MoviesList = ({ moviesList }) => {
                 </p>
                 <span className={s.containerVote}>
                   <Rating className={s.iconVote} />
-                  {(Math.floor(movie.vote_average * 100) / 100).toFixed(1)}
+                  {/* {(Math.floor(movie.vote_average * 100) / 100).toFixed(1)} */}
+                  {Math.trunc(movie.vote_average * 10) + "%"}
                 </span>
               </Link>
             </li>
