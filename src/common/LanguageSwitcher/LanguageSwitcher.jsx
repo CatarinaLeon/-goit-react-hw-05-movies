@@ -8,26 +8,25 @@ const languages = {
   uk: { icon: ukrFlagIcon, nativeName: "Українська" },
 };
 
-export default function LanguageSwitcher({ toggleLang, lang }) {
+export default function LanguageSwitcher({ toggleLang }) {
   const { i18n } = useTranslation();
 
   return (
     <div className={s.switcher}>
       {Object.keys(languages).map((lang) => (
-        <div key={lang}>
+        <div key={lang} style={{ height: 30 }}>
           <button
-            className={i18n.resolvedLanguage === lang ? s.active : s.button}
+            className={i18n.resolvedLanguage === lang ? s.button : s.active}
             type="submit"
             onClick={() => {
               i18n.changeLanguage(lang);
-              toggleLang();
+              toggleLang(lang);
             }}
           >
             <img
-              className={s.btnWrapper}
+              className={s.img}
               src={languages[lang].icon}
               alt={languages[lang].nativeName}
-              width="50"
             />
           </button>
         </div>

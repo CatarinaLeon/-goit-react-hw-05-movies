@@ -1,36 +1,41 @@
 .switcher {
-  min-width: 45px;
+  min-width: 120px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: absolute;
   top: 89px;
   right: 90px;
 }
+
 @media screen and (min-width: 768px) {
   .switcher {
     top: 17px;
     right: 25px;
   }
 }
+
 @media screen and (min-width: 1280px) {
   .switcher {
-    top: 120px;
+    top: 130px;
     right: 120px;
   }
 }
 
-.btnWrapper {
+.img {
   vertical-align: baseline;
+  width: 50px;
 }
 
 .active {
   border: none;
   background: none;
+  padding: 0;
+  height: 30px;
 }
 
 .button {
   composes: active;
-  cursor: pointer;
+  cursor: no-drop;
+  opacity: 0.5;
 }
-

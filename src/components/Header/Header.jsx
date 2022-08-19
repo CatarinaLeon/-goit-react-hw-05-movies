@@ -8,7 +8,7 @@ import LanguageSwitcher from "../../common/LanguageSwitcher/LanguageSwitcher";
 
 import s from "./Header.module.css";
 
-const Header = ({ toggleLang, lang }) => {
+const Header = ({ toggleLang }) => {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
 
@@ -16,7 +16,7 @@ const Header = ({ toggleLang, lang }) => {
     <header className={theme === themes.light ? s.lightTheme : s.darkTheme}>
       <ThemeSwitcher />
       <Suspense fallback={<h2>loadding</h2>}>
-        <LanguageSwitcher toggleLang={toggleLang} lang={lang} />
+        <LanguageSwitcher toggleLang={toggleLang} />
       </Suspense>
       <NavLink
         to="/"
