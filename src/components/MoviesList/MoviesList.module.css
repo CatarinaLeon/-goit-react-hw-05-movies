@@ -24,11 +24,16 @@
     object-fit: cover;
     border: none;
     border-radius: 5px;
+    min-height: 480px;
+}
+
+.listContainer{
+    padding: 20px 5px; 
+    text-align: center;
 }
 
 .listTitle{
     margin: 0;
-    padding: 20px 5px;
     font-weight: 700;
     font-size: 20px;
     color: var(--textColorBleak);
@@ -65,6 +70,9 @@
     .listItem{
         width: 300px;
     }
+    .listImage {
+        min-height: 450px;
+    }
 }
 
 @media screen and (min-width: 1280px) {
@@ -73,5 +81,11 @@
     }
     .listItem {
         width: 260px;
+    }
+    .listImage {
+        min-height: 390px;
+    }
+    .listTitle {
+        font-size: 18px;
     }
 }

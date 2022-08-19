@@ -23,13 +23,15 @@ const MoviesList = ({ moviesList }) => {
                   alt={movie.title}
                   className={s.listImage}
                 />
-                <p
-                  className={
-                    theme === themes.light ? s.lightTheme : s.darkTheme
-                  }
-                >
-                  {movie.title}
-                </p>
+                <div className={s.listContainer}>
+                  <p
+                    className={
+                      theme === themes.light ? s.lightTheme : s.darkTheme
+                    }
+                  >
+                    {movie.title}
+                  </p>
+                </div>
                 <span className={s.containerVote}>
                   <Rating className={s.iconVote} />
                   {/* {(Math.floor(movie.vote_average * 100) / 100).toFixed(1)} */}
