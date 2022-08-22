@@ -70,7 +70,10 @@ const MoviesDetailsPage = ({ lang }) => {
           </p>
           <p className={s.movieDetailsSubject}>
             {t("pages.UserScore")}:
-            <span className={s.movieDetailsScore}>{movie.popularity}</span>
+            <span className={s.movieDetailsScore}>
+              {Math.round(movie.popularity).toString()}
+              {/* {movie.popularity} */}
+            </span>
           </p>
           <h4 className={s.movieDetailsText}>{t("pages.Overview")}</h4>
           <p

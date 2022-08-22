@@ -12,7 +12,7 @@ export default function BtnScrollUp() {
       "scroll",
       throttle(500, (e) => scrollWatch())
     );
-  });
+  }, []);
 
   const scrollWatch = () => {
     let scroll_position = window.scrollY;
