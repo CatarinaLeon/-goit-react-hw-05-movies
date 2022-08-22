@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { getDataMovies } from "../../services/api";
 import MoviesList from "../../components/MoviesList/MoviesList";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
-import { ReactComponent as SearchIcon } from "../../images/search.svg";
+import sprite from "../../images/sprite.svg";
+
 import { useTranslation } from "react-i18next";
 
 import s from "./MoviesPage.module.css";
@@ -51,7 +52,9 @@ const MoviesPage = ({ lang }) => {
     <>
       <form onSubmit={handleSubmit} className={s.form}>
         <button type="submit" className={s.formBtn}>
-          <SearchIcon />
+          <svg className={s.formBtnIcon} width="20px" height="20px">
+            <use href={sprite + "#icon-search"} />
+          </svg>
         </button>
         <input
           onInput={handleInput}

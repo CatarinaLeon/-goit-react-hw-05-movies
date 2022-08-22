@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import BtnScrollUp from "../../common/BtnScrollUp/BtnScrollUp";
 import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
 
-import defaultImg from "../../images/NoImage_Available.jpg";
+import defaultImg from "../../images/no-image.webp";
 import s from "./ActorCards.module.css";
 
 const ActorCards = ({ actorsList }) => {
@@ -24,6 +24,8 @@ const ActorCards = ({ actorsList }) => {
                 }
                 alt={name}
                 className={s.cardImg}
+                width="150"
+                min-height="225"
               />
               <p
                 className={theme === themes.light ? s.lightTheme : s.darkTheme}

@@ -12,7 +12,7 @@ import { getDataMovies } from "../../services/api";
 import dateFormat from "dateformat";
 import Loader from "../../common/Loader/Loader";
 import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
-import { ReactComponent as ArrowLeft } from "../../images/arrow_left.svg";
+import sprite from "../../images/sprite.svg";
 
 import s from "./MoviesDetailsPage.module.css";
 
@@ -45,7 +45,9 @@ const MoviesDetailsPage = ({ lang }) => {
   return (
     <>
       <button type="button" onClick={handelGoBack} className={s.movieBtn}>
-        <ArrowLeft className={s.arrowLeft} />
+        <svg className={s.arrowLeft} width="25px" height="23px">
+          <use href={sprite + "#icon-arrow-left"} />
+        </svg>
         {t("pages.btn")}
       </button>
       <div className={s.movieInfoContainer}>

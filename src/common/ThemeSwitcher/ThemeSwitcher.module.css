@@ -44,10 +44,10 @@
     -webkit-transition: 0.4s;
     transition: 0.4s;
     box-shadow: 0 0px 15px var(--borderColor);
-    background: var(--textColorWhite) url('../../images/sunny.png');
+    background: var(--textColorWhite) url('../../images/theme-sun.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 30px;
+    background-size: 27px;
 }
 
 .switch input:checked+.slider {
@@ -63,10 +63,10 @@
     -ms-transform: translateX(24px);
     transform: translateX(11px);
     width: 20x;
-    background: var(--textColorWhite) url('../../images/moon.svg');
+    background: var(--textColorWhite) url('../../images/theme-moon.svg');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 26px;
+    background-position: -8px -9px;
+    background-size: 55px;
 }
 
 /* Rounded sliders */

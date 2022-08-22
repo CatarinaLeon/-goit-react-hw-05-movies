@@ -1,11 +1,16 @@
 import { useTranslation } from "react-i18next";
-import ukrFlagIcon from "../../images/uk.png";
-import ukFlagIcon from "../../images/en.png";
+import sprite from "../../images/sprite.svg";
 import s from "./LanguageSwitcher.module.css";
 
 const languages = {
-  en: { icon: ukFlagIcon, nativeName: "English" },
-  uk: { icon: ukrFlagIcon, nativeName: "Українська" },
+  en: {
+    country_code: "gb",
+    name: "English",
+  },
+  uk: {
+    country_code: "ua",
+    name: "Українська",
+  },
 };
 
 export default function LanguageSwitcher({ toggleLang }) {
@@ -14,7 +19,7 @@ export default function LanguageSwitcher({ toggleLang }) {
   return (
     <div className={s.switcher}>
       {Object.keys(languages).map((lang) => (
-        <div key={lang} style={{ height: 30 }}>
+        <div key={lang} className={s.wraper}>
           <button
             className={i18n.resolvedLanguage === lang ? s.button : s.active}
             type="submit"
@@ -23,11 +28,9 @@ export default function LanguageSwitcher({ toggleLang }) {
               toggleLang(lang);
             }}
           >
-            <img
-              className={s.img}
-              src={languages[lang].icon}
-              alt={languages[lang].nativeName}
-            />
+            <svg width="50px" height="35px">
+              <use href={`${sprite}#${lang}`} />
+            </svg>
           </button>
         </div>
       ))}

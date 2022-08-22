@@ -16,7 +16,5 @@
     transition-duration: 800ms;
 }
 .btnArrowUp{
-    width: 35px;
-    height: 35px;
     fill: var(--accentMain);
 }

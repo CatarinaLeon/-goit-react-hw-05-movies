@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   gap: 50px;
-  font-size: calc(10px + 2vmin);
+  font-size: 26px;
   color: var(--textColorWhite);
   box-shadow: var(--backgroundColorSecond) 0px 0px 10px 1px;
 }
@@ -28,7 +28,7 @@
 @media screen and (min-width: 1280px) {
   .header {
     padding: 40px 0;
-    background-image: url(../../images/movies_movi.png), url(../../images/pngegg19.png);
+    background-image: url(../../images/movies_movi.webp), url(../../images/pngegg2.webp);
     background-repeat: no-repeat;
     background-position: 4% 9%, 100% 25%;
     background-size: 9%, 75%;

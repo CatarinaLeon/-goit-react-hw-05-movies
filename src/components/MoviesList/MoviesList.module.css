@@ -63,9 +63,7 @@
     background-color: var(--backgroundColorSecond);
     color: var(--accentMain);
 }
-.iconVote{
-    width: 20px;
-}
+
 @media screen and (min-width: 768px) {
     .listItem{
         width: 300px;

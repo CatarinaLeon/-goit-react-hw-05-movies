@@ -1,5 +1,5 @@
 .switcher {
-  min-width: 120px;
+  min-width: 110px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,17 +21,15 @@
     right: 120px;
   }
 }
-
-.img {
-  vertical-align: baseline;
-  width: 50px;
+.wraper{
+  height: 35px
 }
 
 .active {
   border: none;
   background: none;
   padding: 0;
-  height: 30px;
+  height: 35px;
 }
 
 .button {

@@ -41,6 +41,10 @@
     box-shadow: var(--backgroundColorThird) 0px 0px 2px 1px;
     
 }
+.formBtnIcon{
+    stroke: var(--textColorBleak);
+    fill: none;
+}
 .containerGif{
     margin:0 auto;
     height: 500px;

@@ -19,7 +19,6 @@
   box-shadow: var(--borderColorCard) 0px 0px 10px 1px;
 }
 .cardImg{
-  width: 100%;
   min-height: 225px;
   border-radius: 5px;
   border-bottom: 1px solid var(--borderColorCard);

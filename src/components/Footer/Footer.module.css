@@ -16,7 +16,6 @@
 
 .footerHeart {
     margin: 0 10px;
-    fill: var(--accentSecond);
     animation: heartbeating 2s infinite;
 }
 

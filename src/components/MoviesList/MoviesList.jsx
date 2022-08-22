@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import BtnScrollUp from "../../common/BtnScrollUp/BtnScrollUp";
 import { ThemeContext, themes } from "../../common/ThemeSwitcher/themeContext";
-import { ReactComponent as Rating } from "../../images/rating_like.svg";
+import sprite from "../../images/sprite.svg";
 
 import s from "./MoviesList.module.css";
 
@@ -22,6 +22,8 @@ const MoviesList = ({ moviesList }) => {
                   src={`${url}${movie.poster_path}`}
                   alt={movie.title}
                   className={s.listImage}
+                  width="100%"
+                  height="390"
                 />
                 <div className={s.listContainer}>
                   <p
@@ -33,7 +35,9 @@ const MoviesList = ({ moviesList }) => {
                   </p>
                 </div>
                 <span className={s.containerVote}>
-                  <Rating className={s.iconVote} />
+                  <svg width="20px" height="18px">
+                    <use href={sprite + "#icon-rating-like"} />
+                  </svg>
                   {/* {(Math.floor(movie.vote_average * 100) / 100).toFixed(1)} */}
                   {Math.trunc(movie.vote_average * 10) + "%"}
                 </span>

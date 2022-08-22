@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { throttle } from "throttle-debounce";
-import { ReactComponent as ArrowUp } from "../../images/arrow-up.svg";
+import sprite from "../../images/sprite.svg";
+
 import s from "./BtnScrollUp.module.css";
 
 export default function BtnScrollUp() {
@@ -29,7 +30,9 @@ export default function BtnScrollUp() {
     <>
       {status === "visible" && (
         <div className={s.btnScrollUp} onClick={handlerScrollUp}>
-          <ArrowUp className={s.btnArrowUp} />
+          <svg className={s.btnArrowUp} width="35px" height="30px">
+            <use href={sprite + "#icon-arrow-up"} />
+          </svg>
         </div>
       )}
     </>
